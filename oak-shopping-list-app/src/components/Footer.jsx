@@ -1,8 +1,15 @@
-const Footer = () => {
+/* eslint-disable react/prop-types */
+const Footer = ({ items }) => {
+  const numItems = items.length;
+  const numPacked = items.filter((item) => item.packed).length;
+  const percentage = (numPacked / numItems) * 100;
   return (
     <div className="">
       <footer className="w-screen p-5 flex overflow-hidden bottom-0">
-        Total Items: X Completed Items: X
+        {percentage === 100
+          ? "Shopping Done!"
+          : `Total Items: ${numItems} ---------- Completed Items: ${numPacked}--${percentage}%
+`}
       </footer>
     </div>
   );

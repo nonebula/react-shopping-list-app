@@ -13,6 +13,15 @@ function App() {
   const handleDeleteItem = (id) => {
     setItems((items) => items.filter((item) => item.id !== id));
   };
+
+  const handleDoneItem = (id) => {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -20,8 +29,9 @@ function App() {
         items={items}
         handleAddItems={handleAddItems}
         handleDeleteItem={handleDeleteItem}
+        handleDoneItem={handleDoneItem}
       />
-      <Footer />
+      <Footer items={items} />
     </div>
   );
 }
