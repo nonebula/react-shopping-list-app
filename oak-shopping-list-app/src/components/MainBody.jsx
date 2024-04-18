@@ -1,13 +1,16 @@
-import shoppingList from "../data/data";
 import List from "./List";
+import Form from "./Form";
 
-const MainBody = () => {
+const MainBody = ({ items, handleAddItems, handleDeleteItem }) => {
   return (
-    <ul>
-      {shoppingList.map((item) => (
-        <List item={item} key={item.id} />
-      ))}
-    </ul>
+    <div>
+      <Form handleAddItems={handleAddItems} />
+      <ul>
+        {items.map((item) => (
+          <List item={item} key={item.id} handleDeleteItem={handleDeleteItem} />
+        ))}
+      </ul>
+    </div>
   );
 };
 

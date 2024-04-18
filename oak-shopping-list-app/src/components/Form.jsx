@@ -1,16 +1,28 @@
 import { useState } from "react";
 
-const Form = () => {
-  const [product, setProduct] = useState("TEST");
-  const [quantity, setQuantity] = useState(5);
+const Form = ({ handleAddItems }) => {
+  const [product, setProduct] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (product) {
+      const newTodo = {
+        id: Date.now(),
+        packed: false,
+        product,
+        quantity,
+      };
+      handleAddItems(newTodo);
+      setProduct("");
+      setQuantity(1);
+    }
   };
   return (
     <form onSubmit={handleSubmit}>
       <select
         value={quantity}
-        onChange={(event) => setQuantity(event.target.value)}
+        onChange={(event) => setQuantity(Number(event.target.value))}
       >
         {[...Array(20)].map((_, index) => (
           <option value={index + 1} key={index + 1}>
