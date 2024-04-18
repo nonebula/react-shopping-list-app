@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 const List = ({ item, handleDeleteItem, handleDoneItem }) => {
-  // eslint-disable-next-line no-unused-vars
-  const { product, quantity, packed } = item;
+  const { product, quantity } = item;
 
   return (
     <li>
@@ -24,6 +24,12 @@ const List = ({ item, handleDeleteItem, handleDoneItem }) => {
       </div>
     </li>
   );
+};
+
+List.propTypes = {
+  item: PropTypes.object.isRequired,
+  handleDeleteItem: PropTypes.func.isRequired,
+  handleDoneItem: PropTypes.func.isRequired,
 };
 
 export default List;

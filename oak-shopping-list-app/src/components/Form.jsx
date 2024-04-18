@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Form = ({ handleAddItems }) => {
   const [product, setProduct] = useState("");
@@ -40,6 +40,10 @@ const Form = ({ handleAddItems }) => {
       <button>Add</button>
     </form>
   );
+};
+
+Form.propTypes = {
+  handleAddItems: PropTypes.func.isRequired,
 };
 
 export default Form;

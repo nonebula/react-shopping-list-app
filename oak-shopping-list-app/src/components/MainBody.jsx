@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
 import List from "./List";
 import Form from "./Form";
 import { useState } from "react";
+
+import PropTypes from "prop-types";
 
 const MainBody = ({
   items,
@@ -45,6 +46,13 @@ const MainBody = ({
       </div>
     </div>
   );
+};
+
+MainBody.propTypes = {
+  items: PropTypes.array.isRequired,
+  handleAddItems: PropTypes.func.isRequired,
+  handleDeleteItem: PropTypes.func.isRequired,
+  handleDoneItem: PropTypes.func.isRequired,
 };
 
 export default MainBody;

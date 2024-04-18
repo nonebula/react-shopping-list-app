@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 const Footer = ({ items }) => {
   const numItems = items.length;
   const numPacked = items.filter((item) => item.packed).length;
@@ -14,5 +15,10 @@ const Footer = ({ items }) => {
     </div>
   );
 };
+
+Footer.propTypes = {
+  items: PropTypes.array.isRequired,
+};
+
 
 export default Footer;
