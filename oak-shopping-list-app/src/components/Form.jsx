@@ -22,11 +22,11 @@ const Form = ({ handleAddItems }) => {
   return (
     <div className="container">
       <form
-        className="w-screen flex justify-evenly m-4"
+        className="w-screen flex justify-evenly p-20 text-black"
         onSubmit={handleSubmit}
       >
         <select
-          className="ring ring-blue-600 m-4 h-8"
+          className="ring ring-yellow-300 text-black p-4 h-8"
           value={quantity}
           onChange={(event) => setQuantity(Number(event.target.value))}
         >
@@ -37,13 +37,13 @@ const Form = ({ handleAddItems }) => {
           ))}
         </select>
         <input
-          className="w-1/2 h-12"
+          className="w-1/2 h-12 border-4 p-4 border-yellow-300"
           type="text"
           placeholder="Enter an Item"
           value={product}
           onChange={(event) => setProduct(event.target.value)}
         />
-        <button className="btn ring ring-blue-500 rounded-lg w-20 font-bold">
+        <button className="btn ring ring-yellow-300 bg-white rounded-lg w-20 font-bold  text-black">
           Add
         </button>
       </form>

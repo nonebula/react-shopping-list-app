@@ -6,7 +6,7 @@ const List = ({ item, handleDeleteItem, handleDoneItem }) => {
   return (
     <div className="container">
       <li
-        className={`bg-slate-300 space-y-6 p-8 rounded-lg flex flex-col items-center overflow-hidden shadow-lg ${
+        className={`bg-yellow-300 space-y-6 p-8 rounded-lg flex flex-col items-center ring-yellow-500 ring-8 ${
           item.packed ? "line-through" : ""
         }`}
       >

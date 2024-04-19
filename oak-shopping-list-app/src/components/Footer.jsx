@@ -6,7 +6,7 @@ const Footer = ({ items }) => {
   const percentage = (numPacked / numItems) * 100;
   return (
     <div className="container bottom-0">
-      <footer className="w-screen mt-12 pt-8 mx-auto text-center text-2xl border-t-gray-600 border-t-4 mb-10">
+      <footer className="w-screen pt-8 pb-8 mx-auto text-center text-2xl border-t-black border-t-4 bg-yellow-300 text-black">
         {percentage === 100
           ? "Shopping Done!"
           : `Total Items: ${numItems}  ----------  Completed Items: ${numPacked}  ----------  ${percentage}%

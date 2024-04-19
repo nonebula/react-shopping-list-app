@@ -23,7 +23,7 @@ const MainBody = ({
       .sort((a, b) => Number(a.packed) - Number(b.packed));
   }
   return (
-    <div className="container text-center min-h-96 w-screen">
+    <div className="text-center min-h-96 w-screen bg-black">
       <Form handleAddItems={handleAddItems} />
       <div className="flex justify-center">
         <ul className="flex flex-col items-center space-y-5">
