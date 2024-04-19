@@ -5,7 +5,11 @@ const List = ({ item, handleDeleteItem, handleDoneItem }) => {
 
   return (
     <div className="container">
-      <li className="border space-y-6 flex flex-col p-8">
+      <li
+        className={`bg-slate-300 space-y-6 p-8 rounded-lg flex flex-col items-center overflow-hidden shadow-lg ${
+          item.packed ? "line-through" : ""
+        }`}
+      >
         <p className="text-lg font-bold">{product}</p>
         <span className="text-lg">Amount needed: {quantity}</span>
         <div>

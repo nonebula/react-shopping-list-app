@@ -25,16 +25,18 @@ const MainBody = ({
   return (
     <div className="container text-center min-h-96 w-screen">
       <Form handleAddItems={handleAddItems} />
-      <ul className="flex flex-col items-center justify-center">
-        {sortedItems.map((item) => (
-          <List
-            item={item}
-            key={item.id}
-            handleDeleteItem={handleDeleteItem}
-            handleDoneItem={handleDoneItem}
-          />
-        ))}
-      </ul>
+      <div className="flex justify-center">
+        <ul className="flex flex-col items-center space-y-5">
+          {sortedItems.map((item) => (
+            <List
+              item={item}
+              key={item.id}
+              handleDeleteItem={handleDeleteItem}
+              handleDoneItem={handleDoneItem}
+            />
+          ))}
+        </ul>
+      </div>
       <div>
         <select
           className="text-center ring-2 rounded-lg"
