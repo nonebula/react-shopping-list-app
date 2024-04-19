@@ -23,9 +23,9 @@ const MainBody = ({
       .sort((a, b) => Number(a.packed) - Number(b.packed));
   }
   return (
-    <div>
+    <div className="container text-center min-h-96 w-screen">
       <Form handleAddItems={handleAddItems} />
-      <ul>
+      <ul className="flex flex-col items-center justify-center">
         {sortedItems.map((item) => (
           <List
             item={item}
@@ -37,6 +37,7 @@ const MainBody = ({
       </ul>
       <div>
         <select
+          className="text-center ring-2 rounded-lg"
           value={sortBy}
           onChange={(event) => setSortBy(event.target.value)}
         >

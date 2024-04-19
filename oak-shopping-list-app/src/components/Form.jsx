@@ -20,25 +20,34 @@ const Form = ({ handleAddItems }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <select
-        value={quantity}
-        onChange={(event) => setQuantity(Number(event.target.value))}
+    <div className="container">
+      <form
+        className="w-screen flex justify-evenly m-4"
+        onSubmit={handleSubmit}
       >
-        {[...Array(20)].map((_, index) => (
-          <option value={index + 1} key={index + 1}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-      <input
-        type="text"
-        placeholder="Enter an Item"
-        value={product}
-        onChange={(event) => setProduct(event.target.value)}
-      />
-      <button>Add</button>
-    </form>
+        <select
+          className="ring ring-blue-600 m-4 h-8"
+          value={quantity}
+          onChange={(event) => setQuantity(Number(event.target.value))}
+        >
+          {[...Array(20)].map((_, index) => (
+            <option value={index + 1} key={index + 1}>
+              {index + 1}
+            </option>
+          ))}
+        </select>
+        <input
+          className="w-1/2 h-12"
+          type="text"
+          placeholder="Enter an Item"
+          value={product}
+          onChange={(event) => setProduct(event.target.value)}
+        />
+        <button className="btn ring ring-blue-500 rounded-lg w-20 font-bold">
+          Add
+        </button>
+      </form>
+    </div>
   );
 };
 
